@@ -49,6 +49,19 @@ th, td {
   text-align: left;
   padding: 8px;
 }
+input[type=submit] {
+  background-color: #3483eb;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
 
 tr:nth-child(even) {background-color: #63b2ff;}
 
@@ -71,6 +84,7 @@ tr:nth-child(even) {background-color: #63b2ff;}
 
 <th><b>Phone Number</b></th>
 <th><b>Status</b></th>
+<th><b>Action</b></th>
 
 
 

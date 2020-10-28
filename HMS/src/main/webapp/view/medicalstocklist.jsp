@@ -45,7 +45,22 @@ th, td {
   padding: 8px;
 }
 
-tr:nth-child(even) {background-color: #63b2ff;}
+tr:nth-child(even) {background-color: #63b2ff;
+}
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 2px #63b2ff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color:#63b2ff;
+  color: white;
+}
 
 </style>
 
@@ -86,7 +101,7 @@ tr:nth-child(even) {background-color: #63b2ff;}
  <td><b><%= ms.getExpirydate() %></b></td>
  <td><b><%= ms.getPrice() %></b></td>
  
- <td><a href="http://localhost:8989/HMS/edit.jsp?name=<%=ms.getMedicinename()%>">Edit</a> </td>
+ <td><a href="http://localhost:8989/HMS/edit.jsp?name=<%=ms.getMedicinename()%>&q=<%=ms.getQuantity()%>&p=<%=ms.getPrice()%>&c=<%=ms.getComponents()%>">Edit</a> </td>
 
 
 

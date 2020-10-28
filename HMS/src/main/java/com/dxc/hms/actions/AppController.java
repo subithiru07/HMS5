@@ -45,7 +45,7 @@ public class AppController implements AppCtrl {
 		
 	}
 	
-	@RequestMapping(value="/admin/login")
+	@RequestMapping(value="/admin/login",method=RequestMethod.POST)
 	public ModelAndView LoginValidate(@RequestParam(value="username")String user,@RequestParam(value="password") String password) {
 		AdminDao ad = new AdminDao();
 		boolean b= ad.Login(user, password);
@@ -72,7 +72,7 @@ public class AppController implements AppCtrl {
 	    p.setAge(age);
 	    p.setGender(gender);
 	    pd.AddPatient(p);
-	    return new ModelAndView("");
+	    return new ModelAndView("patientlogin");
 	        
 	    }
 
@@ -107,8 +107,9 @@ public class AppController implements AppCtrl {
 		d.setPassword(password);
 		d.setAvailabletiming(availabletiming);
 		doc.AddDoctor(d);
+		List l=doc.doctorList();
 		
-		return new ModelAndView("adminhome");
+		return new ModelAndView("doctorlist","data",l);
 		
 		
 	}
@@ -129,7 +130,7 @@ public class AppController implements AppCtrl {
 		}
 	    
 		
-		 @RequestMapping(value="/pharmacist/add")
+		 @RequestMapping(value="/pharmacist/add",method=RequestMethod.POST)
 		 public ModelAndView addPharmacist(@RequestParam(value="name")String name,@RequestParam(value="phonenumber")String phonenumber,@RequestParam(value="emailid")String emailid,@RequestParam(value="password")String password) {
 			PharmacistDao pd = new PharmacistDao();
 			Pharmacist p = new Pharmacist();
@@ -138,8 +139,9 @@ public class AppController implements AppCtrl {
 			p.setEmailid(emailid);
 			p.setPassword(password);
 			pd.AddPharmacist(p);
+			List l=pd.pharmacistList();
 			
-			 return new ModelAndView("adminhome","","") ;
+			 return new ModelAndView("pharmacistlist","data",l) ;
 		 }
 
 		@RequestMapping(value="/pharmacist/login", method=RequestMethod.POST)
@@ -157,7 +159,7 @@ public class AppController implements AppCtrl {
 		}
 		
 		
-		@RequestMapping(value="/receptionist/add")
+		@RequestMapping(value="/receptionist/add",method=RequestMethod.POST)
 		public ModelAndView addReceptionist(@RequestParam(value="name")String name,@RequestParam(value="phnnumber")int phnnumber,@RequestParam(value="email")String email,@RequestParam(value="password")String password)
 		{
 		ReceptionistDao rd=new ReceptionistDao();
@@ -167,7 +169,8 @@ public class AppController implements AppCtrl {
 	    r.setEmail(email);
 	    r.setPhnnumber(phnnumber);
 	    rd.addReceptionist(r);
-		return new ModelAndView("adminhome","data",name);
+	    List l = rd.receptionistList();
+		return new ModelAndView("receptionistlist","data",l);
 	   }
 
 		
@@ -222,9 +225,10 @@ public class AppController implements AppCtrl {
 			return new ModelAndView("receptionistlist","data",l);
 			
 		}
-		 @RequestMapping(value="/appointments/add")
-		    public ModelAndView appointments(@RequestParam(value="time") String time, @RequestParam(value="date")String date, @RequestParam(value="specialist")String specialist,  @RequestParam(value="illness")String illness, @RequestParam(value="patientname")String patientname)
+		 @RequestMapping(value="/appointments/add",method=RequestMethod.POST)
+		    public ModelAndView appointments(HttpSession session,@RequestParam(value="time") String time, @RequestParam(value="date")String date, @RequestParam(value="specialist")String specialist,  @RequestParam(value="illness")String illness, @RequestParam(value="patientname")String patientname)
 		    {
+			 session.setAttribute("user", patientname);
 		    AppointmentsDao ap=new AppointmentsDao();
 		   
 		    Appointments a =new Appointments();
@@ -236,7 +240,7 @@ public class AppController implements AppCtrl {
 		    a.setIllness(illness);
 		    a.setPatientname(patientname);
 		    ap.bookAppointments(a);
-		        return new ModelAndView("");
+		        return new ModelAndView("patienthome","data",patientname);
 		       
 		    }
 
@@ -255,7 +259,7 @@ public class AppController implements AppCtrl {
 			List l = ad.makeAppointments(cp, id);
 			
 			
-			return new ModelAndView("appointmentlist","data",l);
+			return new ModelAndView("adminhome","data",l);
 		}
 
 		@Override
@@ -299,8 +303,9 @@ public class AppController implements AppCtrl {
 			ms.setExpirydate(expirydate);
 			ms.setPrice(price);
 			md.AddMedicalstock(ms);
+			List l = md.MedicalstockList();
 			
-			 return new ModelAndView("","","") ;
+			 return new ModelAndView("medicalstocklist","data",l) ;
 		}
 		@RequestMapping(value="/medicalstocklist/list")
 		public ModelAndView MedicalstockList() {
@@ -351,7 +356,7 @@ public class AppController implements AppCtrl {
 	    p.setMedicinequantity4(medicinequantity4);
 		pre.addprescription(p);
 		
-		return new ModelAndView();
+		return new ModelAndView("adminhome");
 		
 		}
 		
@@ -371,7 +376,7 @@ public class AppController implements AppCtrl {
 	    a.setFloornumber(floornumber);
 	    a.setRoomnumber(roomnumber);
 	    ad.admission(a);
-		return new ModelAndView("");
+		return new ModelAndView("receptionisthome");
 		
 	}
 		@RequestMapping(value="/room")

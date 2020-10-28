@@ -50,7 +50,21 @@ th, td {
   padding: 8px;
 }
 
-tr:nth-child(even) {background-color: #63b2ff;}
+input[type=submit] {
+  background-color: #3399ff;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  Border-style:groove;
+Border-width:Medium;
+  border: groove;
+  cursor: pointer;
+  width: 60%;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
 
 </style>
 <body>

@@ -68,6 +68,7 @@ tr:nth-child(even) {background-color: #63b2ff;}
 <th><b>Date</b></th>
 
 <th><b>Time</b></th>
+<th><b>Action</b></th>
 
 
 

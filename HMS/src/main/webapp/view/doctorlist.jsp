@@ -59,11 +59,12 @@ tr:nth-child(even) {background-color: #63b2ff;}
 <table border=1>
 <tr>
 <th><b>Doctor Name</b></th>
-<th><b>department</b></th>
-<th><b>emailid</b></th>
-<th><b>gender</b></th>
-<th><b>phonenumber</b></th>
-<th><b>availabletiming</b></th>
+<th><b>Department</b></th>
+<th><b>Emailid</b></th>
+<th><b>Gender</b></th>
+<th><b>Phonenumber</b></th>
+<th><b>Availabletiming</b></th>
+<th><b>Date</b></th>
 
 
 </tr>
@@ -76,6 +77,7 @@ for(Doctor p:l){%>
 <td><b><%= p.getGender() %></b></td>
 <td><b><%= p.getPhonenumber() %></b></td>
 <td><b><%= p.getAvailabletiming() %></b></td>
+<td><b><%= p.getDate() %></b></td>
 
 
 
