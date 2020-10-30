@@ -116,10 +116,10 @@ img {
 <div class="imgcontainer">
     <img src="https://www.flaticon.com/svg/static/icons/svg/1560/1560893.svg" alt="Avatar" class="avatar">
   </div>
-<label for="uname"><b>Username</b></label><input type="text" name="name" placeholder="Enter Username"><br>
- <label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter Password"><br>
+<label for="uname"><b>Username</b></label><input type="text" name="name" placeholder="Enter Username" required><br>
+ <label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter Password" required><br>
 <input type="submit" value="login">
-<input type="checkbox" checked="checked" name="remember">Remember me</label>
+
 
 
 </form>

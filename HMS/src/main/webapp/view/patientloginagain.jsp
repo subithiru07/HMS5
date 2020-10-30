@@ -120,12 +120,12 @@ img {
   </div>
 
 <form action="http://localhost:8989/HMS/patient/login" method="post">
-<label for="uname"><b>Username</b><input type="text" name="username" placeholder="Enter Username"><br>
-<p style="color:red">Invalid username or password</p><br>
-<label for="psw"><b>Password</b></label><input type="password" name="password"  placeholder="Enter password"><br>
+<label for="uname"><b>Username</b><input type="text" name="username" placeholder="Enter Username" required><br>
+<p style="color:red">Invalid Username or Password</p><br>
+<label for="psw"><b>Password</b></label><input type="password" name="password"  placeholder="Enter password" required><br>
 
 <input type="submit" value="Sign in">
-<input type="checkbox" checked="checked" name="remember">Remember me</label>
+
 </center>
 </form>
 </div>

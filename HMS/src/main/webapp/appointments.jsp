@@ -136,6 +136,89 @@ img {
     width:100%;
   }
   }
+  input[type=text], input[type=password],input[type=number],input[type=date] {
+  width: 150%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+
+}
+
+input[type=submit] {
+  background-color: #002366;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 13%;
+  border-radius: 10%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+select 
+{
+    height: 50px;
+    width: 150%;
+    color: white;
+    background-color: #002366;
+}
+
+option {
+    color: white;
+}
+  
+  
+  .p{
+  text-align: left;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
 </style>
 
 <div class="navbar">
@@ -146,23 +229,26 @@ img {
 <a href="http://localhost:8989/HMS/patientlogin.jsp">Logout</a>
 
 </div>
-
+<div class="p">
+<h3 align:"right">Login as <%=name %></h3></div>
 <center>
-<p1>login as <%=name %></p1><br>
+
 <form action="appointments/add" method="post">
 <!-- Time:<input type="text" name="time"> -->
-<label for="time">Time</label>
-<select name="time" id="Time">
-<option value="9.00am to 12.00pm">9.00am to 12.00pm </option>
-<option value="2.00pm to 5.00pm">2.00am to 5.00pm </option>
-<option value="6.00pm to 9.00pm">6.00pm to 9.00pm </option>
-<option value="11.00pm to 2.00am">11.00pm to 2.00am </option>
-<option value="4.00am to 7.00am">4.00am to 7.00am </option>
-</select>
-date:<input type="date" name="date">
+<table>
+<tr><td>
+<label for="time"><b>Time:</b></label></td>
+  <td><select name="time" id="Time">
+  <option value="9:00am to 12:00pm">9:00am to 12:00pm </option>
+  <option value="2:00pm to 5:00pm">2:00am to 5:00pm </option>
+  <option value="6:00pm to 9:00pm">6:00pm to 9:00pm </option>
+  <option value="11:00pm to 2:00am">11:00pm to 2:00am </option>
+  <option value="4:00am to 7:00am">4:00am to 7:00am </option>
+</select></td></tr>
+<tr><td>Date:</td><td><input type="date" name="date"></td></tr>
 <!-- Specialist:<input type="text" name="specialist"> -->
-<label for="specialist">Specialist</label>
-  <select name="specialist" id="specialist">
+<tr><td><label for="specialist">Specialist</label></td>
+ <td> <select name="specialist" id="specialist">
     
     <option value="Audiologist">Audiologist</option>
     <option value="Cardiologist">Cardiologist</option>
@@ -179,14 +265,15 @@ date:<input type="date" name="date">
     <option value="Pulmonologist">Pulmonologist</option>
     <option value="Radiologist">Radiologist </option>
     <option value="Veterinarian">Veterinarian </option>
-</select>
+</select></td></tr>
 
-Illness:<input type="text" name="illness">
+<tr><td>Illness:</td><td><input type="text" name="illness"></td></tr>
 <input type="hidden" name="patientname" value="<%=name%>">
 
  
 
-<input type="submit" value="add">
+<tr><td></td><td><input type="submit" value="Confirmappointment"></td></tr>
+</table>
 </form>
 </center>
 </head>

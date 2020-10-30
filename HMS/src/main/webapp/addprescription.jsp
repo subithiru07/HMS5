@@ -5,8 +5,8 @@
 body {font-family: "Times New Roman", Times, serif;}
 form {border: 4px solid #f1f1f1;}
 
-input[type=text], input[type=password] {
-  width: 30%;
+input[type=text], input[type=password],input[type=number] {
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -22,7 +22,7 @@ input[type=submit] {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 10%;
+  width: 100%;
 }
 
 input[type=submit]:hover {
@@ -64,6 +64,18 @@ span.psw {
      width: 100%;
   }
 }
+select {
+    height: 50px;
+    width: 100%;
+    color: white;
+    background-color: #002366;
+}
+
+option {
+    color: white;
+}
+h8{
+font-size:150%;}
 </style>
 
 <div class="container">
@@ -71,17 +83,20 @@ span.psw {
 <%String name = (String)request.getParameter("name");
 String dname= (String)request.getParameter("dname");%>
 <h2></h2>
-<center>
-<h1>Add Prescription</h1>
+
+
 <form action="prescription/add.html" method="get">
-Doctor Name:<%out.println(dname); %><input type="hidden" name="doctorname"  value="<%=dname%>"><br>
-Patient Name:<%out.println(name); %><input type="hidden" name="patientname" value="<%=name%>"><br>
-Patient Age:<input type="text" name="patientage"><br>
+<h8><b>Doctor Name:<%out.println(dname); %></b></h8><input type="hidden" name="doctorname"  value="<%=dname%>"><br>
+<h8><b>Patient Name:<%out.println(name); %></b></h8><input type="hidden" name="patientname" value="<%=name%>"><br>
+<center>
+<table>
+<h1>Add Prescription</h1>
+<tr><td><b>Patient Age:</b></td><td><input type="text" name="patientage"></td>
 <!-- Patient Gender:<input type="text" name="patientgender"><br> -->
-<p>Gender</p> <input type="radio" id="male" name="patientgender" value="male">  <label for="male">Male</label> <input type="radio" id="female" name="patientgender" value="female"><label for="female">Female</label><br>
+<td><b>Gender<b></b></td><td><input type="radio" id="male" name="patientgender" value="male">  <label for="male">Male</label> <input type="radio" id="female" name="patientgender" value="female"><label for="female">Female</label><br></td></tr>
 <!-- Medicine:<input type="text" name="medicine">   -->
-<label for="medicine">Medicine1</label> 
-<select name="medicine" id="Medicine">
+<tr><td><label for="medicine"><b>Medicine1</b></label> </td>
+<td><select name="medicine" id="Medicine">
 <option value="Amoxicillin">Amoxicillin </option>
 <option value="Aspirin">Aspirin </option>
 <option value="Atrovastatin">Atrovastatin </option>
@@ -110,11 +125,11 @@ Patient Age:<input type="text" name="patientage"><br>
 <option value="Valproic acid">Valproic acid </option>
 <option value="Vitamin B">Vitamin B </option>
 <option value="Zolpidem">Zolpidem </option>
-</select>
-Medicine Quantity:<input type="number" name="medicinequantity"><br>
+</select></td>
+<td><b>Medicine Quantity:</b></td><td><input type="number" name="medicinequantity"><br></td>
 <!-- Medicine:<input type="text" name="medicine1"> -->
-<label for="medicine1">Medicine2</label> 
-<select name="medicine1" id="Medicine1">
+<tr><td><label for="medicine1"><b>Medicine2</b></label> </td>
+<td><select name="medicine1" id="Medicine1">
 <option value="Amoxicillin">Amoxicillin </option>
 <option value="Aspirin">Aspirin </option>
 <option value="Atrovastatin">Atrovastatin </option>
@@ -143,10 +158,10 @@ Medicine Quantity:<input type="number" name="medicinequantity"><br>
 <option value="Valproic acid">Valproic acid </option>
 <option value="Vitamin B">Vitamin B </option>
 <option value="Zolpidem">Zolpidem </option>
-</select>
-Medicine Quantity:<input type="number" name="medicinequantity1"><br>
-<label for="medicine2">Medicine3</label> 
-<select name="medicine2" id="Medicine2">
+</select></td>
+<td><b>Medicine Quantity:</b></td><td><input type="number" name="medicinequantity1"><br></td></tr>
+<tr><td><label for="medicine2"><b>Medicine3</b></label> </td>
+<td><select name="medicine2" id="Medicine2">
 <option value="Amoxicillin">Amoxicillin </option>
 <option value="Aspirin">Aspirin </option>
 <option value="Atrovastatin">Atrovastatin </option>
@@ -175,13 +190,13 @@ Medicine Quantity:<input type="number" name="medicinequantity1"><br>
 <option value="Valproic acid">Valproic acid </option>
 <option value="Vitamin B">Vitamin B </option>
 <option value="Zolpidem">Zolpidem </option>
-</select>
-Medicine Quantity:<input type="number" name="medicinequantity2"><br>
+</select></td>
+<td><b>Medicine Quantity:</b></td><td><input type="number" name="medicinequantity2"><br></td></tr>
 
 
 <!-- Medicine:<input type="text" name="medicine2">  -->
-<label for="medicine3">Medicine4</label> 
-<select name="medicine3" id="Medicine3">
+<tr><td><label for="medicine3"><b>Medicine4</b></label> </td>
+<td><select name="medicine3" id="Medicine3">
 <option value="Amoxicillin">Amoxicillin </option>
 <option value="Aspirin">Aspirin </option>
 <option value="Atrovastatin">Atrovastatin </option>
@@ -210,14 +225,14 @@ Medicine Quantity:<input type="number" name="medicinequantity2"><br>
 <option value="Valproic acid">Valproic acid </option>
 <option value="Vitamin B">Vitamin B </option>
 <option value="Zolpidem">Zolpidem </option>
-</select>
-Medicine Quantity:<input type="number" name="medicinequantity3"><br>
+</select></td>
+<td><b>Medicine Quantity:</b></td><td><input type="number" name="medicinequantity3"><br></td></tr>
 
 
 <!-- Medicine:<input type="text" name="medicine3">  -->
 <!-- Medicine:<input type="text" name="medicine4"> -->
-<label for="medicine4">Medicine5</label> 
-<select name="medicine4" id="Medicine4">
+<tr><td><label for="medicine4"><b>Medicine5</b></label> </td>
+<td><select name="medicine4" id="Medicine4">
 <option value="Amoxicillin">Amoxicillin </option>
 <option value="Aspirin">Aspirin </option>
 <option value="Atrovastatin">Atrovastatin </option>
@@ -246,10 +261,11 @@ Medicine Quantity:<input type="number" name="medicinequantity3"><br>
 <option value="Valproic acid">Valproic acid </option>
 <option value="Vitamin B">Vitamin B </option>
 <option value="Zolpidem">Zolpidem </option>
-</select>
-Medicine Quantity:<input type="number" name="medicinequantity4"><br>
+</select></td>
+<td><b>Medicine Quantity:</b></td><td><input type="number" name="medicinequantity4"><br></td></tr>
 
-<input type="submit" value="add">
+<tr><td>    <td><td><input type="submit" value="Add"></td></tr>
+</table>
 
 </form>
 </center>

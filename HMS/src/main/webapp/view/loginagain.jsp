@@ -116,11 +116,10 @@ img {
 <div class="imgcontainer">
     <img src="https://cdn4.iconfinder.com/data/icons/business-color-4/512/businessman-512.png" alt="Avatar" class="avatar">
   </div>
-<label for="uname"><b>Username</b></label><input type="text" name="username"><br>
-<p style="color:red">Invalid username or password</p><br>
-<label for="psw"><b>Password</b></label><input type="password" name="password"><br>
-<input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+<label for="uname"><b>Username</b></label><input type="text" name="username" placeholder="Enter Username" required><br>
+<p style="color:red">Invalid Username or Password</p><br>
+<label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter Password" required><br>
+
 
 <input type="submit" value="Sign in">
 </center>

@@ -5,8 +5,8 @@
 body {font-family: "Times New Roman", Times, serif;}
 form {border: 4px solid #f1f1f1;}
 
-input[type=text], input[type=password] {
-  width: 30%;
+input[type=number], input[type=date] {
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -22,7 +22,7 @@ input[type=submit] {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 10%;
+  width: 100%;
 }
 
 input[type=submit]:hover {
@@ -64,6 +64,17 @@ span.psw {
      width: 100%;
   }
 }
+select {
+    height: 50px;
+    width: 100%;
+    color: white;
+    background-color: #002366;
+
+}
+
+option {
+    color: white;
+}
 </style>
 
 <div class="container">
@@ -74,12 +85,13 @@ String c = (String)request.getAttribute("c");
 String p =(String) request.getAttribute("p");%>
 <h2><%out.println(name); %></h2>
 
-<form action="edit/medicalstock" method="post"><br>
-Medicine Name:<input type="hidden" value="<%=name%>" name="medicinename"><br>
-Quantity:<input type="number" name="quantity" value="<%=q%>"><br>
+<form action="edit/medicalstock" method="post">
+<table><tr><td>
+Medicine Name:</td><td><%=name %><input type="hidden" value="<%=name%>" name="medicinename"><br> </td></tr>
+<tr><td>Quantity:</td><td><input type="number" name="quantity" value="<%=q%>"><br></td></tr>
 
-<label for="component">Component</label>
-<select name="components" id="Component">
+<tr><td><label for="component">Component</label></td>
+<td><select name="components" id="Component">
 <option value="Antibiotic Drugs">Antibiotic </option>
 <option value="Antifungal Drugs">Antifungal Drugs </option>
 <option value="Anti Infective Agent">Anti Infective Agent </option>
@@ -88,11 +100,11 @@ Quantity:<input type="number" name="quantity" value="<%=q%>"><br>
 <option value="AntiMalarial Drugs">AntiMalarial Drugs </option>
 <option value="Anti Allergic Drug">Anti Allergic Drug </option>
 <option value="Antibacterial Drugs">Antibacterial Drugs </option>
-</select><br>
-Manufacturingdate:<input type="date" name="manufacturingdate"><br>
-Expirydate:<input type="date" name="expirydate"><br>
-Price:<input type="number" name="price"><br>
-<input type="submit" value="update">
+</select><br></td></tr>
+<tr><td>Manufacturingdate:</td><td><input type="date" name="manufacturingdate"><br></td></tr>
+<tr><td>Expirydate:</td><td><input type="date" name="expirydate"><br></td></tr>
+<tr><td>Price:</td><td><input type="number" name="price"><br></td></tr>
+<tr><td>   </td> <td><input type="submit" value="update"></td></tr>
 </form>
 </div>
 </center>

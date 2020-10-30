@@ -160,7 +160,7 @@ public class AppController implements AppCtrl {
 		
 		
 		@RequestMapping(value="/receptionist/add",method=RequestMethod.POST)
-		public ModelAndView addReceptionist(@RequestParam(value="name")String name,@RequestParam(value="phnnumber")int phnnumber,@RequestParam(value="email")String email,@RequestParam(value="password")String password)
+		public ModelAndView addReceptionist(@RequestParam(value="name")String name,@RequestParam(value="phnnumber")int phnnumber,@RequestParam(value="emailid")String email,@RequestParam(value="password")String password)
 		{
 		ReceptionistDao rd=new ReceptionistDao();
 	    Receptionist r=new Receptionist();
@@ -196,7 +196,7 @@ public class AppController implements AppCtrl {
 	public ModelAndView doctorList() {
 		DoctorDao dd= new DoctorDao();
 		
-		List l =dd.doctorList();
+		List l = dd.doctorList();
 		
 		
 		
@@ -356,7 +356,7 @@ public class AppController implements AppCtrl {
 	    p.setMedicinequantity4(medicinequantity4);
 		pre.addprescription(p);
 		
-		return new ModelAndView("adminhome");
+		return new ModelAndView("doctorhome");
 		
 		}
 		
@@ -408,6 +408,14 @@ public class AppController implements AppCtrl {
 			Bill b = rd.billGenerate(name,illness,phno);
 			
 			return new ModelAndView("bill","data",b);
+			
+		}
+		@RequestMapping(value="/searchdata")
+		public ModelAndView searchDate(@RequestParam(value="date")String date) {
+			DoctorDao dd = new DoctorDao();
+			List l = dd.searchDate(date);
+			
+			return new ModelAndView("doctorlist","data",l);
 			
 		}
 		

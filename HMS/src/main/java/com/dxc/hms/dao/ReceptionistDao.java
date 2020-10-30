@@ -114,30 +114,36 @@ HibCon hc=new HibCon();
 		c1.add(Restrictions.eq("medicinename", d.getMedicine()));
 		List<Medicalstock> l1= c1.list();
 		Medicalstock m1 = l1.get(0);
+		System.out.println(m1);
 		a.setPrice1((float)m1.getPrice());
 		
 		Criteria c2 = ses.createCriteria(Medicalstock.class);
-		c1.add(Restrictions.eq("medicinename", d.getMedicine1()));
+		//System.out.print( d.getMedicine1());
+		c2.add(Restrictions.eq("medicinename", d.getMedicine1()));
 		List<Medicalstock> l2= c2.list();
 		Medicalstock m2 = l2.get(0);
+		System.out.println(m2);
 		a.setPrice2((float)m2.getPrice());
 		
 		Criteria c3 = ses.createCriteria(Medicalstock.class);
-		c1.add(Restrictions.eq("medicinename", d.getMedicine2()));
+		c3.add(Restrictions.eq("medicinename", d.getMedicine2()));
 		List<Medicalstock> l3= c3.list();
 		Medicalstock m3 = l3.get(0);
+		System.out.println(m3);
 		a.setPrice3((float)m3.getPrice());
 		
 		Criteria c4 = ses.createCriteria(Medicalstock.class);
-		c1.add(Restrictions.eq("medicinename", d.getMedicine3()));
+		c4.add(Restrictions.eq("medicinename", d.getMedicine3()));
 		List<Medicalstock> l4= c4.list();
 		Medicalstock m4 = l4.get(0);
+		System.out.println(m4);
 		a.setPrice4((float)m4.getPrice());
 		
 		Criteria c5 = ses.createCriteria(Medicalstock.class);
-		c1.add(Restrictions.eq("medicinename", d.getMedicine4()));
+		c5.add(Restrictions.eq("medicinename", d.getMedicine4()));
 		List<Medicalstock> l5= c5.list();
 		Medicalstock m5 = l5.get(0);
+		System.out.println(m5);
 		a.setPrice5((float)m5.getPrice());
 		
 		float room_rent=  1200;

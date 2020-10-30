@@ -134,12 +134,13 @@ img {
     width:100%;
   }
   }
+  
 </style>
 <div class="navbar">
 <a href="http://localhost:8989/HMS/index.jsp" >Home</a>
 
-<a href="http://localhost:8989/HMS/addstock.jsp">Add new stocks</a>
-<a href="http://localhost:8989/HMS/medicalstocklist/list.html"> View stocks List</a>
+<a href="http://localhost:8989/HMS/addstock.jsp">New stocks</a>
+<a href="http://localhost:8989/HMS/medicalstocklist/list.html">Stocks List</a>
 <a href="http://localhost:8989/HMS/pharmacistlogin.jsp" class="right">Logout</a>
 </div>
 <div class="header">

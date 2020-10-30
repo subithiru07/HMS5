@@ -76,6 +76,13 @@ public class DoctorDao  {
 		t.commit();
 		
 	}
+	public List searchDate(String date) {
+		Session ses = hc.getSession();
+		Criteria c  = ses.createCriteria(Doctor.class);
+		c.add(Restrictions.eq("date", date));
+		List l =c.list();
+		return l;
+	}
 	
 
 }

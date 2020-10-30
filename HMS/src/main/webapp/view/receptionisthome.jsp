@@ -136,11 +136,12 @@ img {
   }
 </style>
 <div class="navbar">
-<a href="http://localhost:8989/HMS/index.jsp" >Home</a>
+
 
 <a href="http://localhost:8989/HMS/admission.jsp">Admission</a>
-<a href="http://localhost:8989/HMS/rooms.jsp">rooms</a>
 <a href="http://localhost:8989/HMS/admissionlist.html">Admission List</a>
+<!-- <a href="http://localhost:8989/HMS/rooms.jsp">rooms</a> -->
+<a href="http://localhost:8989/HMS/index.jsp" >Home</a>
 <a href="http://localhost:8989/HMS/receptionistlogin.jsp" class="right">Logout</a>
 </div>
 <div class="header">

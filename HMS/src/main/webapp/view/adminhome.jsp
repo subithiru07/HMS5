@@ -144,16 +144,23 @@ img {
 
 <!-- <a href="addpatient.jsp">Add Patient</a> -->
 <a href="http://localhost:8989/HMS/adminlogin.jsp">Logout</a>
-<a href="http://localhost:8989/HMS/adddoctor.jsp">Add Doctor</a>
-<a href="http://localhost:8989/HMS/addpharmacist.jsp">Add pharmacist</a>
-<a href="http://localhost:8989/HMS/addreceptionist.jsp">Add Receptionist</a>
+<div class="dropdown">
+    <button class="dropbtn">Add
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+<a href="http://localhost:8989/HMS/adddoctor.jsp">Doctor</a>
+<a href="http://localhost:8989/HMS/addpharmacist.jsp">Pharmacist</a>
+<a href="http://localhost:8989/HMS/addreceptionist.jsp">Receptionist</a>
+</div>
+</div>
 
 <div class="dropdown">
     <button class="dropbtn">List
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-<a href="http://localhost:8989/HMS/doctor/list.html">Doctor</a>
+<a href="http://localhost:8989/HMS/viewbydate.jsp">Doctor</a>
 <a href="http://localhost:8989/HMS/patient/list.html">Patient</a>
 <a href="http://localhost:8989/HMS/pharmacist/list.html">Pharmacist</a>
 <a href="http://localhost:8989/HMS/receptionist/list.html">Receptionist</a>

@@ -142,9 +142,10 @@ session.setAttribute("name", name); %>
 
 
 <a href="http://localhost:8989/HMS/doctorlogin.jsp">Logout</a>
-<a href="http://localhost:8989/HMS/doctorappview.jsp">View Appointnments</a>
+
 
 <a href="http://localhost:8989/HMS/index.jsp">Home</a>
+<a href="http://localhost:8989/HMS/doctorappview.jsp">Appointnments</a>
 
 </div>
 <div class="header">

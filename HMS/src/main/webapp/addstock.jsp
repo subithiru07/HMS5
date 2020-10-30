@@ -4,9 +4,8 @@
 <style>
 body {font-family: "Times New Roman", Times, serif;}
 form {border: 4px solid #f1f1f1;}
-
-input[type=text], input[type=password] {
-  width: 30%;
+input[type=date], input[type=],input[type=number] {
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -15,14 +14,15 @@ input[type=text], input[type=password] {
 
 }
 
-input[type=submit] {
+
+ input[type=submit] {
   background-color: #002366;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 10%;
+  width: 50%;
 }
 
 input[type=submit]:hover {
@@ -64,13 +64,23 @@ span.psw {
      width: 100%;
   }
 }
+select {
+    height: 50px;
+    width: 100%;
+    color: white;
+    background-color: #002366;
+}
+
+option {
+    color: white;
+}
 </style>
 <div class="container">
 <center><h1>Add MedicalStock</h1>
 <form action="medicalstock/add.html" method="post">
-
-<label for="medicines">Medicines</label>
-<select name="medicinename" id="Medicines">
+<table>
+<tr><td><label for="medicines">Medicines</label></td>
+<td><select name="medicinename" id="Medicines">
 <option value="Amoxicillin">Amoxicillin </option>
 <option value="Aspirin">Aspirin </option>
 <option value="Atrovastatin">Atrovastatin </option>
@@ -99,14 +109,14 @@ span.psw {
 <option value="Valproic acid">Valproic acid </option>
 <option value="Vitamin B">Vitamin B </option>
 <option value="Zolpidem">Zolpidem </option>
-</select>
+</select></td></tr>
 
 
 
 
 
-<label for="component">Component</label>
-<select name="components" id="Component">
+<tr><td><label for="component">Component</label></td>
+<td><select name="components" id="Component">
 <option value="Antibiotic Drugs">Antibiotic </option>
 <option value="Antifungal Drugs">Antifungal Drugs </option>
 <option value="Anti Infective Agent">Anti Infective Agent </option>
@@ -115,14 +125,14 @@ span.psw {
 <option value="AntiMalarial Drugs">AntiMalarial Drugs </option>
 <option value="Anti Allergic Drug">Anti Allergic Drug </option>
 <option value="Antibacterial Drugs">Antibacterial Drugs </option>
-</select><br>
+</select><br></td></tr>
 
-Quantity:<input type="number" name="quantity">Price:<input type="number" name="price"><br>
-ManufacturingDate:<input type="date" name="manufacturingdate">
-ExpiryDate:<input type="date" name="expirydate"><br>
+<tr><td>Quantity:</td><td><input type="number" name="quantity" required></td><tr><td>Price:</td><td><input type="number" name="price" required><br</td></tr>
+<tr><td>ManufacturingDate:</td><td><input type="date" name="manufacturingdate" required></td></tr>
+<tr><td>ExpiryDate:</td><td><input type="date" name="expirydate" ><br></td></tr>
 
 
-<input type="submit" value="add">
+<tr><td> </td><td><input type="submit" value="Add"></td></tr></table>
 
 </form>
 </center>

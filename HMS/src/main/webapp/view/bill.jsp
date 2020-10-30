@@ -1,11 +1,19 @@
 <%@page import="java.util.List" %>
 <%@page import="com.dxc.hms.model.Bill" %>
+<%@ page import="java.text.NumberFormat" %>
+<%
+    NumberFormat nf = NumberFormat.getInstance();
+    nf.setMaximumFractionDigits(2);
+    nf.setMinimumFractionDigits(2);
+%>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: "Times New Roman", Times, serif;}
-form {border: 4px solid #f1f1f1;}
+.bill {
+border: 4px solid #002366;
+}
 
 input[type=text], input[type=password] {
   width: 30%;
@@ -66,18 +74,29 @@ span.psw {
      width: 100%;
   }
 }
+.contant{
+align-content:  right;
+}
 </style>
+<div class="bill">
+<%Bill B= (Bill)request.getAttribute("data");%>
+Name:<%=B.getName() %><br>
+<div class="details">
+DoctorName:<%=B.getDoctorName()%><br>
+Illness :<%=B.getIllness() %><br>
+</div>	
+<div class="contact">
+Phno:  <%=B.getPhno() %> <br>
+Total: <%=nf.format(B.getTotal()) %>  <br> 
+</div>
 <center>
+
 <div class="container">
 
 
-<%Bill B= (Bill)request.getAttribute("data");%>
-Name:<%=B.getName() %><br>
-DoctorName:<%=B.getDoctorName()%><br>
-Illness :<%=B.getIllness() %><br>
-Phno:<%=B.getPhno() %> <br>
-Total<%=B.getTotal()%>  <br>                                     
-		
+
+                                    
+	
 <table border=1 color="#002366">
 <tr>
 <th><b>Medicine</b>
@@ -91,7 +110,7 @@ Total<%=B.getTotal()%>  <br>
 </tr>
 <tr>
 <td><%=B.getMedicinename1() %><br><%=B.getMedicinename2() %><br><%=B.getMedicinename3() %><br><%=B.getMedicinename4() %>
-<br><%=B.getMedicinename4() %></td>
+<br><%=B.getMegdicinename5() %></td>
 <td><%=B.getQuantity1() %><br><%=B.getQuantity2() %><br><%=B.getQuantity3() %><br><%=B.getQuantity4()%><br><%=B.getQuantity5()%></td>
 <td><%=B.getPrice1() %><br><%=B.getPrice2() %><br><%=B.getPrice3() %><br><%=B.getPrice4() %><br><%=B.getPrice5() %></td>
 
@@ -101,12 +120,13 @@ Total<%=B.getTotal()%>  <br>
 <td><%=B.getDeit_service() %></td>
 <td><%=B.getLab_service()  %></td>
 </tr>
-</table>
-<b>Total    :<%=B.getTotal()%> </b><br>
+</table><br>
+<b>Total    :<%= nf.format(B.getTotal()) %> </b><br><br>
 
 <input type="button" value="pay"/>
 
 </div>
 </center>
+<div class="bill">	
 </head>
 </html>

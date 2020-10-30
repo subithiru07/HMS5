@@ -120,11 +120,11 @@ img {
     <img src="https://cdn4.iconfinder.com/data/icons/medical-health-set-2-glyph/33/medical_receptionist-512.png" alt="Avatar" class="avatar">
   </div>
 <form action="http://localhost:8989/HMS/receptionist/login.html" method="post">
-<label for="uname"><b>Username</b></label><input type="text" name="name" placeholder="Enter Username" ><br>
-<p style="color:red">Invalid username or password</p>
-<label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter password" ><br>
+<label for="uname"><b>Username</b></label><input type="text" name="name" placeholder="Enter Username"  required><br>
+<p style="color:red">Invalid Username or Password</p>
+<label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter password" required><br>
 <input type="submit" value="login">
-<input type="checkbox" checked="checked" name="remember">Remember me</label>
+
 </form>
 </center>
 </body>

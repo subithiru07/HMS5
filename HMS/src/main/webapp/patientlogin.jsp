@@ -116,8 +116,8 @@ img {
     <img src="https://images.squarespace-cdn.com/content/v1/5c7405b1a5682733324ea2f3/1553006459420-MF7PAGVTRRS6YQUHZFH2/ke17ZwdGBToddI8pDm48kGfiFqkITS6axXxhYYUCnlRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpxQ1ibo-zdhORxWnJtmNCajDe36aQmu-4Z4SFOss0oowgxUaachD66r8Ra2gwuBSqM/BenMedica+Patient+Icon.png" alt="Avatar" class="avatar">
   </div>
 <form action="patient/login" method="post">
-<label for="uname"><b>Username</b></label><input type="text" name="username" placeholder="Enter Username"><br>
-<label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter password"><br>
+<label for="uname"><b>Username</b></label><input type="text" name="username" placeholder="Enter Username" required><br>
+<label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter password" required><br>
 <a href="patientreg.jsp" >Create an account?</a><br>
 <input type="submit" value="Sign in">
 <input type="checkbox" checked="checked" name="remember">Remember me</label>

@@ -117,9 +117,9 @@ img {
     <img src="https://i.pinimg.com/originals/33/00/87/330087979d837e6d51faeb778ec503af.png" alt="Avatar" class="avatar">
   </div>
 <form action="http://localhost:8989/HMS/doctor/login.html" method="post">
-<label for="uname"><b>Username</b></label> <input type="text" name="username" placeholder="Enter Username"><br>
-<p style="color:red">Invalid username or password</p><br>
- <label for="psw"><b>Password</b></label> <input type="password" name="password" placeholder="Enter Password"><br>
+<label for="uname"><b>Username</b></label> <input type="text" name="username" placeholder="Enter Username" required><br>
+<p style="color:red">Invalid Username or Password</p><br>
+ <label for="psw"><b>Password</b></label> <input type="password" name="password" placeholder="Enter Password" required><br>
 <input type="submit" value="login" >
 </form>
 </div>

@@ -124,13 +124,11 @@ img {
   <div class="imgcontainer">
     <img src="https://cdn4.iconfinder.com/data/icons/business-color-4/512/businessman-512.png" alt="Avatar" class="avatar">
   </div>
-<label for="uname"><b>Username</b></label><input type="text" name="username" placeholder="Enter Username"><br>
- <label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter Password"><br>
+<label for="uname"><b>Username</b></label><input type="text" name="username" placeholder="Enter Username" required><br>
+ <label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter Password" required><br>
 
 <input type="submit" value="Sign in">
-<label>
-<input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+
 
 </form>
 </div>
