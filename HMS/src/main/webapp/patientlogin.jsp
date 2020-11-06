@@ -101,8 +101,13 @@ img {
   padding: 14px 20px; /* Add some padding */
   text-decoration: none; /* Remove underline */
 }
+
+nav {
+    float: left;
+}
 </style>
 </head>
+
 <div class="navbar">
 
 
@@ -120,7 +125,7 @@ img {
 <label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter password" required><br>
 <a href="patientreg.jsp" >Create an account?</a><br>
 <input type="submit" value="Sign in">
-<input type="checkbox" checked="checked" name="remember">Remember me</label>
+
 
 
 </form>

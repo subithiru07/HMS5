@@ -1,6 +1,8 @@
 <!-- <H1>Patient Home</H1> -->
 <% String name = (String)request.getAttribute("data");
-session.setAttribute("data", name);%>
+session.setAttribute("user", name);
+session.setAttribute("data", name);
+//out.print(name); %>
 <%-- <h2> Logined as <%out.println(name);%></h2> --%>
 <!DOCTYPE html>
 <html lang="en">
@@ -142,6 +144,7 @@ img {
 </style>
 <div class="navbar">
 <a href="http://localhost:8989/HMS/appointment/status.html">Status</a>
+<a href="http://localhost:8989/HMS/index.jsp">Home</a>
 <a href="http://localhost:8989/HMS/appointments.jsp">Book Appointments</a>
 
 </div>

@@ -4,7 +4,7 @@
 <style>
 body {font-family: "Times New Roman", Times, serif;}
 form {border: 4px solid #f1f1f1;}
-input[type=date], input[type=],input[type=number] {
+input[type=date],input [type= number]{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -127,7 +127,7 @@ option {
 <option value="Antibacterial Drugs">Antibacterial Drugs </option>
 </select><br></td></tr>
 
-<tr><td>Quantity:</td><td><input type="number" name="quantity" required></td><tr><td>Price:</td><td><input type="number" name="price" required><br</td></tr>
+<tr><td>Quantity:</td><td><input type="number" name="quantity" required></td><tr><td>Price:</td><td><input type="number" name="price" required><br></td></tr>
 <tr><td>ManufacturingDate:</td><td><input type="date" name="manufacturingdate" required></td></tr>
 <tr><td>ExpiryDate:</td><td><input type="date" name="expirydate" ><br></td></tr>
 

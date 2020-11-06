@@ -11,6 +11,7 @@ import org.hibernate.criterion.Restrictions;
 import com.dxc.hms.connection.HibCon;
 import com.dxc.hms.model.ConfirmedAppointment;
 import com.dxc.hms.model.Doctor;
+import com.dxc.hms.model.Medicalstock;
 import com.dxc.hms.model.Prescription;
 
 
@@ -82,6 +83,13 @@ public class DoctorDao  {
 		c.add(Restrictions.eq("date", date));
 		List l =c.list();
 		return l;
+	}
+	public List prescription() {
+		Session ses = hc.getSession();
+		Criteria c  = ses.createCriteria(Medicalstock.class);
+		List l = c.list();
+		return l;
+		
 	}
 	
 

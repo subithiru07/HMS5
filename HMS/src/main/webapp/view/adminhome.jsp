@@ -143,7 +143,7 @@ img {
 <center>
 
 <!-- <a href="addpatient.jsp">Add Patient</a> -->
-<a href="http://localhost:8989/HMS/adminlogin.jsp">Logout</a>
+<a href="http://localhost:8989/HMS/adminlogout.html">Logout</a>
 <div class="dropdown">
     <button class="dropbtn">Add
       <i class="fa fa-caret-down"></i>

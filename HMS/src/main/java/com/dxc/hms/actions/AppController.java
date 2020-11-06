@@ -2,6 +2,7 @@ package com.dxc.hms.actions;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -329,7 +330,7 @@ public class AppController implements AppCtrl {
 		    return new ModelAndView("medicalstocklist","data",l);
 		}
 		@RequestMapping(value="/prescription/add")
-		public ModelAndView addprescription(@RequestParam(value="doctorname")String doctorname,@RequestParam(value="patientname")String patientname,@RequestParam(value="patientage")String patientage,@RequestParam(value="patientgender")String patientgender,
+		public ModelAndView addprescription(HttpSession ses,@RequestParam(value="doctorname")String doctorname,@RequestParam(value="patientname")String patientname,@RequestParam(value="patientage")String patientage,@RequestParam(value="patientgender")String patientgender,
 				@RequestParam(value="medicine")String medicine,@RequestParam(value="medicinequantity")float medicinequantity,
 				@RequestParam(value="medicine1")String medicine1,@RequestParam(value="medicinequantity1")float medicinequantity1,
 				@RequestParam(value="medicine2")String medicine2,@RequestParam(value="medicinequantity2")float medicinequantity2,
@@ -337,6 +338,7 @@ public class AppController implements AppCtrl {
 				@RequestParam(value="medicine4")String medicine4,@RequestParam(value="medicinequantity4")float medicinequantity4) 
 		
 		{
+			
 			
 		DoctorDao pre = new DoctorDao();
 		Prescription p = new Prescription();
@@ -418,6 +420,28 @@ public class AppController implements AppCtrl {
 			return new ModelAndView("doctorlist","data",l);
 			
 		}
+		@RequestMapping(value="/adminlogout")
+		public String adminLogout(HttpSession ses) {
+			ses.invalidate();
+			return "redirect:http://localhost:8989/HMS/adminlogin.jsp";
+		}
+		@RequestMapping(value="/doctorwork")
+		public  ModelAndView doctorwork(HttpSession ses,HttpServletRequest request) {
+			
+			
+			  String name = (String) request.getParameter("name"); 
+			  String dname = (String) request.getParameter("dname");
+			  
+			  request.setAttribute("name", name); request.setAttribute("dname", dname);
+			 
+			
+		PharmacistDao pd = new PharmacistDao();
+		List l = pd.MedicalstockList();
+			
+		return new ModelAndView("addprescription","data",l);
+			
+		}
+		
 		
 		
 

@@ -51,8 +51,44 @@ th, td {
 }
 
 tr:nth-child(even) {background-color: #63b2ff;}
+/* Style the header */
+.header {
+  padding: 50px;
+  text-align: center;
+  background: #FFFFFF;
+  color: white;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.navbar {
+  overflow: hidden; /* Hide overflow */
+  background-color: #002366; /* Dark background color */
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: right; /* Make sure that the links stay side-by-side */
+  display: block; /*Change the display to block, for responsive reasons (see below) */
+  color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 14px 20px; /* Add some padding */
+  text-decoration: none; /* Remove underline */
+}
+
 
 </style>
+<div class="navbar">
+<a href="http://localhost:8989/HMS/view/doctorhome.jsp">Back</a>
+</div>
 <body>
 
 <center>
@@ -77,15 +113,17 @@ tr:nth-child(even) {background-color: #63b2ff;}
 <%List<ConfirmedAppointment> l=(List<ConfirmedAppointment>)request.getAttribute("data");
 for(ConfirmedAppointment p:l){%>
 <tr>
-<td><b><%= p.getDoctorName() %></b></td>
-<td><b><%= p.getName() %></b></td>
+<td><b><%= p.getDoctorName() %><%request.setAttribute("name", p.getName());%> </b></td><%System.out.println(p.getName());%>
+<td><b><%= p.getName() %> <%request.setAttribute("dname", p.getDoctorName());%> </b></td><%System.out.println(p.getDoctorName());%>
 <td><b><%= p.getIllness() %></b></td>
 
 
 <td><b><%= p.getDate() %></b></td>
 <td><b><%= p.getTime() %></b></td>
-<td><a href="http://localhost:8989/HMS/addprescription.jsp?name=<%=p.getName() %>&dname=<%=p.getDoctorName() %>">Add</a> </td>
 
+
+<%-- <td><a href="http://localhost:8989/HMS/addprescription.jsp?name=<%=p.getName()%>&dname=<%=p.getDoctorName() %>">Add</a>  --%>
+<td><a href="http://localhost:8989/HMS/doctorwork.html?name=<%=p.getName()%>&dname=<%=p.getDoctorName()%>">Add</a></td>
 </tr>
 <%} %>
 </table>

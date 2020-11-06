@@ -25,7 +25,7 @@ input[type=text], input[type=password] {
 
 }
 
-input[type=button ] {
+input[type=submit ] {
   background-color: #002366;
   color: white;
   padding: 14px 20px;
@@ -102,6 +102,7 @@ Total: <%=nf.format(B.getTotal()) %>  <br>
 <th><b>Medicine</b>
 <th><b>Quantity</b></th>
 <th><b>Rate/Unit</b></th>
+<th><b>Days</b></th>
 <th><b>Room_Rent</b></th>
 <th><b>Doctor_Fee</b></th>
 <th><b>Diet_Service</b></th>
@@ -114,7 +115,7 @@ Total: <%=nf.format(B.getTotal()) %>  <br>
 <td><%=B.getQuantity1() %><br><%=B.getQuantity2() %><br><%=B.getQuantity3() %><br><%=B.getQuantity4()%><br><%=B.getQuantity5()%></td>
 <td><%=B.getPrice1() %><br><%=B.getPrice2() %><br><%=B.getPrice3() %><br><%=B.getPrice4() %><br><%=B.getPrice5() %></td>
 
-
+<td>   1  </td>
 <td><%=B.getRooom_rent() %></td>
 <td><%=B.getConsultation_service() %></td>
 <td><%=B.getDeit_service() %></td>
@@ -122,9 +123,9 @@ Total: <%=nf.format(B.getTotal()) %>  <br>
 </tr>
 </table><br>
 <b>Total    :<%= nf.format(B.getTotal()) %> </b><br><br>
-
-<input type="button" value="pay"/>
-
+<form action="http://localhost:8989/HMS/checkout.jsp">
+<input type="submit" value="pay"/>
+</form>
 </div>
 </center>
 <div class="bill">	

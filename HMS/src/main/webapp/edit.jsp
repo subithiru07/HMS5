@@ -5,7 +5,7 @@
 body {font-family: "Times New Roman", Times, serif;}
 form {border: 4px solid #f1f1f1;}
 
-input[type=number], input[type=date] {
+input[type=number], input[type=date],input[type=text] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -87,7 +87,7 @@ String p =(String) request.getAttribute("p");%>
 
 <form action="edit/medicalstock" method="post">
 <table><tr><td>
-Medicine Name:</td><td><%=name %><input type="hidden" value="<%=name%>" name="medicinename"><br> </td></tr>
+Medicine Name:</td><td><input type="text" value="<%=name%>" name="medicinename" readonly="readonly"><br> </td></tr>
 <tr><td>Quantity:</td><td><input type="number" name="quantity" value="<%=q%>"><br></td></tr>
 
 <tr><td><label for="component">Component</label></td>

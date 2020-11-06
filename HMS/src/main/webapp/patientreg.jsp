@@ -8,7 +8,7 @@ body {font-family: "Times New Roman", Times, serif;}
 form {border: 4px solid #f1f1f1;}
 
 input[type=text], input[type=password] {
-  width: 30%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -24,7 +24,7 @@ input[type=submit] {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 10%;
+  width: 100%;
 }
 
 input[type=submit]:hover {
@@ -89,22 +89,22 @@ function Val(){
 
 <center>
 <h1>Add Patient</h1>
+<table>
 <form action="patient/add" method="post">
-Name:           <input type="text" name="username"><br>
-Password:       <input type="password" name="password" id="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
 <div style="color:red" id="msg"></div> <br> 
-ConfrimPassword:<input type="password" onkeyup="Val()" id="Confirmpassword"><br>
-Email:          <input type="text" name="emailid"><br>
-Phone:          <input type="text" name="phonenumber"><br>
-Address:        <input type="text" name="address"><br>
-Age:            <input type="text" name="age"><br>
+<tr><td>Name:</td><td>           <input type="text" name="username"></td>
+<tr><td>Password:</td>       <td><input type="password" name="password" id="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"></td></tr>
+<tr><td>ConfrimPassword:</td><td><input type="password" onkeyup="Val()" id="Confirmpassword"></td>
+<tr><td>Email: </td>   <td>      <input type="text" name="emailid"></td></tr>
+<tr><td>Phone: </td>    <td>     <input type="text" name="phonenumber"></td></tr>
+<tr><td>Address:</td>    <td>    <input type="text" name="address"></td></tr>
+<tr><td>Age:  </td>      <td>    <input type="text" name="age"></td></tr>
 
 
-<lable>Gender</lable>  <input type="radio" id="male" name="gender" value="male">
+<tr><td><lable>Gender</lable>  <td><input type="radio" id="male" name="gender" value="male">
   <label for="male">Male</label>
   <input type="radio" id="female" name="gender" value="female">
-  <label for="female">Female</label><br>
-<input type="submit" value="add"><br>
-</form>
+  <label for="female">Female</label><br></td><td><input type="submit" value="add"></td></tr>
+</form></table>
 </center>
 </html>

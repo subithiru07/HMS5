@@ -1,3 +1,27 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+input[type=submit] {
+  background-color: #002366;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+}
+input[type=date], input[type=password],input[type=number] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+
+}
+</style>
+</head>
 
 <%String name=(String)session.getAttribute("name");%>
 <center>
@@ -9,3 +33,4 @@
 
 </form>
 </center>
+</html>

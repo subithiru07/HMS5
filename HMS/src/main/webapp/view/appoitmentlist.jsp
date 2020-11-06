@@ -65,10 +65,71 @@ Border-width:Medium;
 input[type=submit]:hover {
   opacity: 0.8;
 }
+body {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  padding: 50px;
+  text-align: center;
+  background: #FFFFFF;
+  color: white;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.navbar {
+  overflow: hidden; /* Hide overflow */
+  background-color: #002366; /* Dark background color */
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: right; /* Make sure that the links stay side-by-side */
+  display: block; /*Change the display to block, for responsive reasons (see below) */
+  color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 14px 20px; /* Add some padding */
+  text-decoration: none; /* Remove underline */
+}
+
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color:  turquoise;
+}
 
 </style>
 <body>
-
+<div class="navbar">
+<a href="http://localhost:8989/HMS/view/adminhome.jsp">Back</a>
+</div>
 <center>
 <table border=1>
 <tr>
@@ -82,9 +143,6 @@ input[type=submit]:hover {
 
 <th><b>Time</b></th>
 <th><b>Action</b></th>
-
-
-
 </tr>
 <%List<Appointments> l=(List<Appointments>)request.getAttribute("data");
 for(Appointments p:l){%>
@@ -95,16 +153,18 @@ for(Appointments p:l){%>
 <td><b><%= p.getIllness() %></b></td>
 <td><b><%= p.getDate() %></b></td>
 <td><b><%= p.getTime() %></b></td>
-<td>
-<form action="http://localhost:8989/HMS/appointments/make.html" method="get">
+<form action="http://localhost:8989/HMS/appointments/make" method="get">
+
 <input type="hidden" value="<%=p.getPatientname() %>"name="patientname">
 <input type="hidden" value="<%=p.getSpecialist() %>"name="specialist">
 <input type="hidden" value="<%=p.getIllness() %>"name="illness">
 <input type="hidden" value="<%=p.getDate() %>"name="date">
 <input type="hidden" value="<%=p.getTime() %>"name="time">
 <input type="hidden" value="<%=p.getId() %>"name="appid">
+<td>
 <input type="submit" value="MakeAppointment">
-</form><td>
+<td>
+</form>
 </tr>
 <%} %>
 </table>

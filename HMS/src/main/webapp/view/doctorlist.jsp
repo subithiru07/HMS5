@@ -51,8 +51,49 @@ th, td {
 }
 
 tr:nth-child(even) {background-color: #63b2ff;}
+body {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  padding: 50px;
+  text-align: center;
+  background: #FFFFFF;
+  color: white;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.navbar {
+  overflow: hidden; /* Hide overflow */
+  background-color: #002366; /* Dark background color */
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: right; /* Make sure that the links stay side-by-side */
+  display: block; /*Change the display to block, for responsive reasons (see below) */
+  color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 14px 20px; /* Add some padding */
+  text-decoration: none; /* Remove underline */
+}
 
 </style>
+
+<div class="navbar">
+<a href="http://localhost:8989/HMS/view/adminhome.jsp">Back</a>
+</div>
 <body>
 
 <center>
