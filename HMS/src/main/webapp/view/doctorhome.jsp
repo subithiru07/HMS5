@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
 <style>
 body {
   font-family: "Times New Roman", Times, serif;
@@ -135,17 +139,20 @@ img {
   }
   }
 </style>
+<body>
 <%String name= (String)request.getAttribute("data"); 
-session.setAttribute("name", name); %>
+request.setAttribute("name", name); %>
 <%-- <h2><%out.println(name); %></h2> --%>
 <div class="navbar">
+<center>
+<h1><font color="white">Doctor Home <i class="fa fa-home"></i></font></h1></center>
+
+<a href="http://localhost:8989/HMS/doctorlogin.jsp" class="glyphicon glyphicon-log-out">Logout<i class="fa fa-sign-out"></i></a>
 
 
-<a href="http://localhost:8989/HMS/doctorlogin.jsp">Logout</a>
+<a href="http://localhost:8989/HMS/index.jsp">Home <i class="fa fa-home"></i></a>
+<a href="http://localhost:8989/HMS/doctorappview.jsp?data=<%=name%>">Appointments <i class='fas fa-layer-group'></i></a>
 
-
-<a href="http://localhost:8989/HMS/index.jsp">Home</a>
-<a href="http://localhost:8989/HMS/doctorappview.jsp">Appointments</a>
 
 </div>
 <div class="header">
@@ -153,4 +160,5 @@ session.setAttribute("name", name); %>
   
 </div>
 </head>
+</body>
 </html>

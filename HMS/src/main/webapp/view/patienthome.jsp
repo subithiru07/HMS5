@@ -8,7 +8,7 @@ session.setAttribute("data", name);
 <html lang="en">
 <head>
 
-
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -143,9 +143,10 @@ img {
   }
 </style>
 <div class="navbar">
-<a href="http://localhost:8989/HMS/appointment/status.html">Status</a>
-<a href="http://localhost:8989/HMS/index.jsp">Home</a>
-<a href="http://localhost:8989/HMS/appointments.jsp">Book Appointments</a>
+<center><h1><font color="white">Patient Home <i class="fa fa-home"></i></font></h1></center>
+<a href="http://localhost:8989/HMS/appointment/status.html">Status <i class='fas fa-chart-area'></i></a>
+<a href="http://localhost:8989/HMS/index.jsp">Home <i class="fa fa-home"></i></a>
+<a href="http://localhost:8989/HMS/appointments.jsp">Book Appointments <i class='far fa-calendar'></i></a>
 
 </div>
 <div class="header">

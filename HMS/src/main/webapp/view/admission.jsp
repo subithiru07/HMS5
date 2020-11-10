@@ -9,6 +9,7 @@
 <html>
 
 <head>
+
 <script>
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
@@ -124,10 +125,11 @@ tr:nth-child(even) {background-color: #63b2ff;}
 
 </style>
 <body>
+<H1>Admission List</H1>
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 
 <center>
-<H1>Admission List</H1>
+
 <table id="myTable">
 <tr>
 <th><b>Patient Name</b></th>

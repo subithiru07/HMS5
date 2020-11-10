@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<%-- <%out.println(session.getAttribute("sess")); %> --%>
 
+<%if(session.getAttribute("sess")=="_INVALID_"){
+	response.sendRedirect("http://localhost:8989/HMS/adminlogin.jsp");
+} 
+else{%>
 
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 <style>
@@ -137,35 +143,39 @@ img {
   }
 </style>
 </head>
-
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <body>
 <div class="navbar">
+
 <center>
+<h1><font color="white">Admin Home <i class="fa fa-home"></i></font></h1>
 
 <!-- <a href="addpatient.jsp">Add Patient</a> -->
-<a href="http://localhost:8989/HMS/adminlogout.html">Logout</a>
+
+<a href="http://localhost:8989/HMS/adminlogout.html"><i class="fa fa-sign-out"></i>Logout</a>
 <div class="dropdown">
     <button class="dropbtn">Add
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-<a href="http://localhost:8989/HMS/adddoctor.jsp">Doctor</a>
-<a href="http://localhost:8989/HMS/addpharmacist.jsp">Pharmacist</a>
-<a href="http://localhost:8989/HMS/addreceptionist.jsp">Receptionist</a>
+<a href="http://localhost:8989/HMS/adddoctor.jsp"><i class="fa fa-fw fa-user"></i>Doctor</a>
+<a href="http://localhost:8989/HMS/addpharmacist.jsp"><i class="fa fa-fw fa-user"></i>Pharmacist</a>
+<a href="http://localhost:8989/HMS/addreceptionist.jsp"><i class="fa fa-fw fa-user"></i>Receptionist</a>
 </div>
 </div>
 
 <div class="dropdown">
     <button class="dropbtn">List
-      <i class="fa fa-caret-down"></i>
+     <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-<a href="http://localhost:8989/HMS/viewbydate.jsp">Doctor</a>
-<a href="http://localhost:8989/HMS/patient/list.html">Patient</a>
-<a href="http://localhost:8989/HMS/pharmacist/list.html">Pharmacist</a>
-<a href="http://localhost:8989/HMS/receptionist/list.html">Receptionist</a>
-<a href="http://localhost:8989/HMS/appointments/list.html">Appointments</a>
+<a href="http://localhost:8989/HMS/viewbydate.jsp"><i class='fas fa-book-medical'></i> Doctor</i></a>
+<a href="http://localhost:8989/HMS/patient/list.html"><i class='fas fa-book-medical'></i> Patient</a>
+<a href="http://localhost:8989/HMS/pharmacist/list.html"><i class='fas fa-book-medical'></i> Pharmacist</a>
+<a href="http://localhost:8989/HMS/receptionist/list.html"><i class='fas fa-book-medical'></i> Receptionist</a>
+<a href="http://localhost:8989/HMS/appointments/list.html"><i class='fas fa-book-medical'></i> Appointments</a>
 </div>
+
 </div>
 </div>
 <div class="header">
@@ -176,3 +186,4 @@ img {
 
 </body>
 </html>
+<%}%>

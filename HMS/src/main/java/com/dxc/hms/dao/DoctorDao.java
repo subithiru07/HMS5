@@ -72,7 +72,7 @@ public class DoctorDao  {
 		// TODO Auto-generated method stub
 		
 		Session ses=hc.getSession();
-		ses.save(Prescription);
+		ses.saveOrUpdate(Prescription);
 		Transaction t=ses.beginTransaction();
 		t.commit();
 		

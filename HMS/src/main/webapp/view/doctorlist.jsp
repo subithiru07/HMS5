@@ -99,12 +99,12 @@ img {
 <center>
 <table border=1>
 <tr>
-<th><b>Doctor Name</b></th>
+<th><b>Doctor name</b></th>
 <th><b>Department</b></th>
-<th><b>Emailid</b></th>
+<th><b>Email id</b></th>
 <th><b>Gender</b></th>
-<th><b>Phonenumber</b></th>
-<th><b>Availabletiming</b></th>
+<th><b>Phone number</b></th>
+<th><b>Available timing</b></th>
 <th><b>Date</b></th>
 
 

@@ -1,5 +1,7 @@
 <html>
 <head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: "Times New Roman", Times, serif;}
@@ -111,7 +113,7 @@ nav {
 <div class="navbar">
 
 
-<a href="http://localhost:8989/HMS/index.jsp">Home</a>
+<a href="http://localhost:8989/HMS/index.jsp">Home <i class="fa fa-home"></i></a>
 
 </div>
 <div class="container">
@@ -122,7 +124,7 @@ nav {
   </div>
 <form action="patient/login" method="post">
 <label for="uname"><b>Username</b></label><input type="text" name="username" placeholder="Enter Username" required><br>
-<label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter password" required><br>
+<label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter Password" required><br>
 <a href="patientreg.jsp" >Create an account?</a><br>
 <input type="submit" value="Sign in">
 

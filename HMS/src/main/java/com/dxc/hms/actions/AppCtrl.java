@@ -9,7 +9,7 @@ import com.dxc.hms.model.ConfirmedAppointment;
 
 public interface AppCtrl {
 	public ModelAndView addAdmin(@RequestParam(value="username")String user,@RequestParam(value="password") String password,@RequestParam(value="email")String email,@RequestParam(value="phone")String phno);
-	public ModelAndView LoginValidate(@RequestParam(value="username")String user,@RequestParam(value="password") String password);
+	public ModelAndView LoginValidate(@RequestParam(value="username")String user,HttpSession ses,@RequestParam(value="password") String password);
 	ModelAndView PatientLogin(String user, String userpass);
 	ModelAndView DoctorLogin(String user, String userpassword);
 	ModelAndView PharmacistLogin(String user, String password);

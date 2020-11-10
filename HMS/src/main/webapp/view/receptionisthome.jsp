@@ -4,6 +4,11 @@
 
 
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
@@ -136,13 +141,13 @@ img {
   }
 </style>
 <div class="navbar">
+<center><h1><font color="white">Receptionist Home <i class="fa fa-home"></i></font></h1></center>
 
-
-<a href="http://localhost:8989/HMS/admission.jsp">Admission</a>
-<a href="http://localhost:8989/HMS/admissionlist.html">Admission List</a>
+<a href="http://localhost:8989/HMS/admission.jsp"> <i class="fa fa-user-plus"></i> Admission</a>
+<a href="http://localhost:8989/HMS/admissionlist.html"><i class="fa fa-database"></i>  Admission List</a>
 <!-- <a href="http://localhost:8989/HMS/rooms.jsp">rooms</a> -->
-<a href="http://localhost:8989/HMS/index.jsp" >Home</a>
-<a href="http://localhost:8989/HMS/receptionistlogin.jsp" class="right">Logout</a>
+<a href="http://localhost:8989/HMS/index.jsp" ><i class="fa fa-home"> </i> Home  </a>
+<a href="http://localhost:8989/HMS/receptionistlogin.jsp" class="glyphicon glyphicon-log-out">Logout</a>
 </div>
 <div class="header">
 <img src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30162353/1159-768x591.png" alt="Paris" style="width:50%;">

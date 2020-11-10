@@ -9,6 +9,7 @@
 <html>
 
 <head>
+
 <style type="text/css">
 .menu{
 	font-family:"Lucida Console";
@@ -98,9 +99,9 @@ img {
 <center>
 <table border=1>
 <tr>
-<th><b>Receptionist Name</b></th>
-<th><b>emailid</b></th>
-<th><b>phonenumber</b></th>
+<th><b>Receptionist name</b></th>
+<th><b>Email id</b></th>
+<th><b>Phone number</b></th>
 
 
 

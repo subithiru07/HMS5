@@ -1,10 +1,12 @@
 <%@page import="java.util.List" %>
 <%@page import="com.dxc.hms.model.Medicalstock" %>
 <%List name= (List)request.getAttribute("data");%>
-<center>
+
 <html>
 <head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style type="text/css">
+body {font-family: "Times New Roman", Times, serif;}
 .menu{
 	font-family:"Lucida Console";
 	text-align:center;
@@ -18,7 +20,7 @@
 	text-align:center;
 }
 .menu a{
-	float:left;
+	float:right;
 	padding:12px;
 	color:#3483eb;
 	text-decoration:none;
@@ -47,20 +49,9 @@ th, td {
 
 tr:nth-child(even) {background-color: #63b2ff;
 }
-a:link, a:visited {
-  background-color: white;
-  color: black;
-  border: 2px #63b2ff;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
 
-a:hover, a:active {
-  background-color:#63b2ff;
-  color: white;
-}
+
+
 #myInput {
   background-image: url('/css/searchicon.png');
   background-position: 10px 10px;
@@ -91,6 +82,20 @@ a:hover, a:active {
 #myTable tr.header, #myTable tr:hover {
   background-color: #f1f1f1;
 }
+.navbar {
+  overflow: hidden; /* Hide overflow */
+  background-color: #002366; /* Dark background color */
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: right; /* Make sure that the links stay side-by-side */
+  display: block; /*Change the display to block, for responsive reasons (see below) */
+  color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 14px 20px; /* Add some padding */
+  text-decoration: none; /* Remove underline */
+}
 </style>
 <script>
 function myFunction() {
@@ -114,30 +119,14 @@ function myFunction() {
 </script>
 
 
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
-</script>
+
  
 
  <body>
+ <div class="navbar">
 <a href="http://localhost:8989/HMS/view/pharmacisthome.jsp">Back</a>
+</div>
+
 <center>
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Medicine name.." title="Type in a name">
 
@@ -173,7 +162,7 @@ function myFunction() {
  <td><b><%= ms.getExpirydate() %></b></td>
  <td><b><%= ms.getPrice() %></b></td>
  
- <td><a href="http://localhost:8989/HMS/edit.jsp?name=<%=ms.getMedicinename()%>&q=<%=ms.getQuantity()%>&p=<%=ms.getPrice()%>&c=<%=ms.getComponents()%>">Edit</a> </td>
+ <td><a href="http://localhost:8989/HMS/edit.jsp?name=<%=ms.getMedicinename()%>&q=<%=ms.getQuantity()%>&p=<%=ms.getPrice()%>&c=<%=ms.getComponents()%>" class="w3-btn w3-white">Update</a> </td>
 
 
 
@@ -190,10 +179,11 @@ function myFunction() {
  </table>
 
  </center>
- <a href="http://localhost:8989/HMS/view/pharmacisthome.jsp">Back</a>
+ 
 
- </body>
+
 
  </head>
+  </body>
 
  </html>

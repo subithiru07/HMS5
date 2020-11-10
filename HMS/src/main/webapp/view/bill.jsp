@@ -9,6 +9,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 body {font-family: "Times New Roman", Times, serif;}
 .bill {
@@ -78,6 +79,9 @@ span.psw {
 align-content:  right;
 }
 </style>
+
+            
+
 <div class="bill">
 <%Bill B= (Bill)request.getAttribute("data");%>
 Name:<%=B.getName() %><br>
@@ -97,6 +101,35 @@ Total: <%=nf.format(B.getTotal()) %>  <br>
 
                                     
 	
+
+
+</form>
+</div>
+</center>
+<div class="bill">
+<center>
+<div class="w3-container">
+  
+<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">View Bill</button>
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id01').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>Bill</h2>
+      </header>
+      <div class="w3-container">
+      <%Bill Bq= (Bill)request.getAttribute("data");%>
+Name:<%=Bq.getName() %><br>
+<div class="details">
+DoctorName:<%=Bq.getDoctorName()%><br>
+Illness :<%=Bq.getIllness() %><br>
+</div>	
+<div class="contact">
+Phno:  <%=Bq.getPhno() %> <br>
+Total: <%=nf.format(Bq.getTotal()) %>  <br> 
+
 <table border=1 color="#002366">
 <tr>
 <th><b>Medicine</b>
@@ -123,11 +156,16 @@ Total: <%=nf.format(B.getTotal()) %>  <br>
 </tr>
 </table><br>
 <b>Total    :<%= nf.format(B.getTotal()) %> </b><br><br>
-<form action="http://localhost:8989/HMS/checkout.jsp">
-<input type="submit" value="pay"/>
-</form>
+ <form action="http://localhost:8989/HMS/checkout.jsp">
+<input type="submit" value="pay"/>       
+      </div>
+      <footer class="w3-container w3-teal">
+        <p>Thank You</p>
+      </footer>
+    </div>
+  </div>
+</div>	
 </div>
 </center>
-<div class="bill">	
 </head>
 </html>

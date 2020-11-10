@@ -23,7 +23,9 @@ input[type=date], input[type=password],input[type=number] {
 </style>
 </head>
 
-<%String name=(String)session.getAttribute("name");%>
+<%String name=(String)request.getParameter("data");
+request.setAttribute("name", name); %>
+<%out.print(name); %>
 <center>
 <h1>Select the date to view Appoitment list</h1>
 <form action="doctor/appointment" method="post">

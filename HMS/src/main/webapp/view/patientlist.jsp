@@ -98,11 +98,11 @@ tr:nth-child(even) {background-color: #63b2ff;}
 <center>
 <table border=1>
 <tr>
-<th><b>Patient Name</b></th>
-<th><b>emailid</b></th>
+<th><b>Patient name</b></th>
+<th><b>Email id</b></th>
 <th><b>Address</b></th>
-<th><b>gender</b></th>
-<th><b>phonenumber</b></th>
+<th><b>Gender</b></th>
+<th><b>Phone number</b></th>
 
 
 

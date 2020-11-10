@@ -63,8 +63,8 @@ tr:nth-child(even) {background-color: #63b2ff;}
 
 <th><b>Illness</b></th>
 <th><b> Specialist </b></th>
-<th><b>date</b></th>
-<th><b>time</b></th>
+<th><b>Date</b></th>
+<th><b>Time</b></th>
 <th><b>Status</b></th>
 
 

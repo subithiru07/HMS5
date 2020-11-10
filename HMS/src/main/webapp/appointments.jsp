@@ -1,5 +1,9 @@
 <%String name = (String)session.getAttribute("data");
 session.setAttribute("data", name); %>
+<%@page import=" java.time.format.DateTimeFormatter"%>
+<%@page import  ="java.time.LocalDateTime"   %>
+<%DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+LocalDateTime now = LocalDateTime.now();%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -237,17 +241,17 @@ option {
 <!-- Time:<input type="text" name="time"> -->
 <table>
 <tr><td>
-<label for="time"><b>Time:</b></label></td>
+<label for="time">Time:</label></td>
   <td><select name="time" id="Time">
   <option value="9:00am to 12:00pm">9:00am to 12:00pm </option>
-  <option value="2:00pm to 5:00pm">2:00am to 5:00pm </option>
+  <option value="2:00pm to 5:00pm">2:00pm to 5:00pm </option>
   <option value="6:00pm to 9:00pm">6:00pm to 9:00pm </option>
   <option value="11:00pm to 2:00am">11:00pm to 2:00am </option>
   <option value="4:00am to 7:00am">4:00am to 7:00am </option>
 </select></td></tr>
-<tr><td>Date:</td><td><input type="date" name="date"></td></tr>
+<tr><td>Date:</td><td><input type="date" name="date" min="<%=dtf.format(now)%>"></td></tr>
 <!-- Specialist:<input type="text" name="specialist"> -->
-<tr><td><label for="specialist">Specialist</label></td>
+<tr><td><label for="specialist">Specialist:</label></td>
  <td> <select name="specialist" id="specialist">
     
     <option value="Audiologist">Audiologist</option>
@@ -264,15 +268,15 @@ option {
     <option value="Psychiatrists">Psychiatrists</option>
     <option value="Pulmonologist">Pulmonologist</option>
     <option value="Radiologist">Radiologist </option>
-    <option value="Veterinarian">Veterinarian </option>
+
 </select></td></tr>
 
-<tr><td>Illness:</td><td><input type="text" name="illness"></td></tr>
+<tr><td>Illness:</td><td><input type="text" name="illness" placeholder="Eg.Cold,Fever"></td></tr>
 <input type="hidden" name="patientname" value="<%=name%>">
 
  
 
-<tr><td></td><td><input type="submit" value="Confirmappointment"></td></tr>
+<tr><td></td><td><input type="submit" value="Confirm Appointment"></td></tr>
 </table>
 </form>
 </center>

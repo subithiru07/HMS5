@@ -105,10 +105,10 @@ img {
 <center>
 <table border=1>
 <tr>
-<th><b>Pharmacist Name</b></th>
-<th><b>Email</b></th>
+<th><b>Pharmacist name</b></th>
+<th><b>Email id</b></th>
 
-<th><b>phonenumber</b></th>
+<th><b>Phone number</b></th>
 
 
 

@@ -1,7 +1,8 @@
 <%@page import="java.util.List" %>
 <%@page import="com.dxc.hms.model.ConfirmedAppointment" %>
 
-<%List name= (List)request.getAttribute("data");%>
+<%List name= (List)request.getAttribute("name");
+%>
 
 
  
@@ -9,7 +10,10 @@
 <html>
 
 <head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style type="text/css">
+
+body {font-family: "Times New Roman", Times, serif;}
 .menu{
 	font-family:"Lucida Console";
 	text-align:center;
@@ -87,7 +91,7 @@ img {
 
 </style>
 <div class="navbar">
-<a href="http://localhost:8989/HMS/view/doctorhome.jsp">Back</a>
+<a href="http://localhost:8989/HMS/view/doctorhome.jsp?data=<%=name%>">Back</a>
 </div>
 <body>
 
@@ -95,7 +99,7 @@ img {
 <table border=1>
 <tr>
 <th><b>Doctor name</b></th>
-<th><b>Patient Name</b></th>
+<th><b>Patient name</b></th>
 
 
 
@@ -114,7 +118,7 @@ img {
 for(ConfirmedAppointment p:l){%>
 <tr>
 <td><b><%= p.getDoctorName() %><%request.setAttribute("name", p.getName());%> </b></td><%System.out.println(p.getName());%>
-<td><b><%= p.getName() %> <%request.setAttribute("dname", p.getDoctorName());%> </b></td><%System.out.println(p.getDoctorName());%>
+<td><b><%= p.getName() %> <%request.setAttribute("dname", p.getDoctorName());%></b></td><%System.out.println(p.getDoctorName());%>
 <td><b><%= p.getIllness() %></b></td>
 
 
@@ -123,7 +127,7 @@ for(ConfirmedAppointment p:l){%>
 
 
 <%-- <td><a href="http://localhost:8989/HMS/addprescription.jsp?name=<%=p.getName()%>&dname=<%=p.getDoctorName() %>">Add</a>  --%>
-<td><a href="http://localhost:8989/HMS/doctorwork.html?name=<%=p.getName()%>&dname=<%=p.getDoctorName()%>">Add</a></td>
+<td><a href="http://localhost:8989/HMS/doctorwork.html?name=<%=p.getName()%>&dname=<%=p.getDoctorName()%>"  class="w3-btn w3-white">Add</a></td>
 </tr>
 <%} %>
 </table>

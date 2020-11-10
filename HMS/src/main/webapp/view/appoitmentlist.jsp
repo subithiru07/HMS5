@@ -133,7 +133,7 @@ img {
 <center>
 <table border=1>
 <tr>
-<th><b>Patient Name</b></th>
+<th><b>Patient name</b></th>
 <th><b>Specialist</b></th>
 
 

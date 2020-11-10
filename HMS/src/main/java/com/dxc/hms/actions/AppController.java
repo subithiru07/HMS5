@@ -2,6 +2,7 @@ package com.dxc.hms.actions;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -47,10 +48,11 @@ public class AppController implements AppCtrl {
 	}
 	
 	@RequestMapping(value="/admin/login",method=RequestMethod.POST)
-	public ModelAndView LoginValidate(@RequestParam(value="username")String user,@RequestParam(value="password") String password) {
+	public ModelAndView LoginValidate(@RequestParam(value="username")String user,HttpSession ses,@RequestParam(value="password") String password) {
 		AdminDao ad = new AdminDao();
 		boolean b= ad.Login(user, password);
 		if(b) {
+			 ses.setAttribute("sess", user);
 			return new ModelAndView("adminhome","data",user);
 		}
 		else {
@@ -121,12 +123,14 @@ public class AppController implements AppCtrl {
 			// TODO Auto-generated method stub
 			DoctorDao doc = new DoctorDao();
 			boolean b=doc.LoginValidate(user, userpassword);
+			
 			if(b) {
 				return new ModelAndView("doctorhome","data",user);
 			}
 			else {
 				return new ModelAndView("doctorloginagain");
 			}
+			
 		
 		}
 	    
@@ -329,38 +333,46 @@ public class AppController implements AppCtrl {
 
 		    return new ModelAndView("medicalstocklist","data",l);
 		}
-		@RequestMapping(value="/prescription/add")
-		public ModelAndView addprescription(HttpSession ses,@RequestParam(value="doctorname")String doctorname,@RequestParam(value="patientname")String patientname,@RequestParam(value="patientage")String patientage,@RequestParam(value="patientgender")String patientgender,
-				@RequestParam(value="medicine")String medicine,@RequestParam(value="medicinequantity")float medicinequantity,
-				@RequestParam(value="medicine1")String medicine1,@RequestParam(value="medicinequantity1")float medicinequantity1,
-				@RequestParam(value="medicine2")String medicine2,@RequestParam(value="medicinequantity2")float medicinequantity2,
-				@RequestParam(value="medicine3")String medicine3,@RequestParam(value="medicinequantity3")float medicinequantity3,
-				@RequestParam(value="medicine4")String medicine4,@RequestParam(value="medicinequantity4")float medicinequantity4) 
-		
-		{
-			
-			
-		DoctorDao pre = new DoctorDao();
-		Prescription p = new Prescription();
-		p.setMedicine(medicine);
-		p.setDoctorname(doctorname);
-		p.setMedicinequantity(medicinequantity);
-		p.setPatientage(patientage);
-		p.setPatientgender(patientgender);
-		p.setPatientname(patientname);
-		p.setMedicine1(medicine1);
-		p.setMedicine2(medicine2);
-		p.setMedicine3(medicine3);
-		p.setMedicine4(medicine4);
-		p.setMedicinequantity1(medicinequantity1);
-		p.setMedicinequantity2(medicinequantity2);
-		p.setMedicinequantity3(medicinequantity3);
-	    p.setMedicinequantity4(medicinequantity4);
-		pre.addprescription(p);
-		
-		return new ModelAndView("doctorhome");
-		
-		}
+		/*
+		 * @RequestMapping(value="/prescription/add") public ModelAndView
+		 * addprescription(HttpSession ses,@RequestParam(value="doctorname")String
+		 * doctorname,@RequestParam(value="patientname")String
+		 * patientname,@RequestParam(value="patientage")String
+		 * patientage,@RequestParam(value="patientgender")String patientgender,
+		 * 
+		 * @RequestParam(value="medicine")String
+		 * medicine,@RequestParam(value="medicinequantity")float medicinequantity,
+		 * 
+		 * @RequestParam(value="medicine1")String
+		 * medicine1,@RequestParam(value="medicinequantity1")float medicinequantity1,
+		 * 
+		 * @RequestParam(value="medicine2")String
+		 * medicine2,@RequestParam(value="medicinequantity2")float medicinequantity2,
+		 * 
+		 * @RequestParam(value="medicine3")String
+		 * medicine3,@RequestParam(value="medicinequantity3")float medicinequantity3,
+		 * 
+		 * @RequestParam(value="medicine4")String
+		 * medicine4,@RequestParam(value="medicinequantity4")float medicinequantity4)
+		 * 
+		 * {
+		 * 
+		 * 
+		 * DoctorDao pre = new DoctorDao(); Prescription p = new Prescription();
+		 * p.setMedicine(medicine); p.setDoctorname(doctorname);
+		 * p.setMedicinequantity(medicinequantity); p.setPatientage(patientage);
+		 * p.setPatientgender(patientgender); p.setPatientname(patientname);
+		 * p.setMedicine1(medicine1); p.setMedicine2(medicine2);
+		 * p.setMedicine3(medicine3); p.setMedicine4(medicine4);
+		 * p.setMedicinequantity1(medicinequantity1);
+		 * p.setMedicinequantity2(medicinequantity2);
+		 * p.setMedicinequantity3(medicinequantity3);
+		 * p.setMedicinequantity4(medicinequantity4); pre.addprescription(p);
+		 * 
+		 * return new ModelAndView("doctorhome");
+		 * 
+		 * }
+		 */
 		
 		@RequestMapping(value="/admission")
 		public ModelAndView admission(@RequestParam(value="spl")String spl,@RequestParam(value="time")String time,@RequestParam(value="date")String date,@RequestParam(value="patientname")String patientname,@RequestParam(value="age")int age,@RequestParam(value="phonenumber")String phonenumber,@RequestParam(value="illness")String illness,@RequestParam(value="status")String status,@RequestParam(value="floornumber")String floornumber,@RequestParam(value="roomnumber")String roomnumber)
@@ -381,6 +393,32 @@ public class AppController implements AppCtrl {
 		return new ModelAndView("receptionisthome");
 		
 	}
+		
+		@RequestMapping(value="/prescription/add")
+		public ModelAndView addPrescription( HttpSession ses,@RequestParam(value="doctorname")String
+				 doctorname,@RequestParam(value="patientname")String
+				 patientname,@RequestParam(value="patientage")String
+				patientage,@RequestParam(value="patientgender")String patientgender,@RequestParam(value="medicine[]")String[]m1,  @RequestParam(value="medicinequantity[]") float[]m2) {
+			for(String s1:m1) {
+				System.out.println(s1);
+			}
+			/*
+			 * for(String s1:m2) { System.out.println(s1); }
+			 */
+			DoctorDao pre = new DoctorDao(); Prescription p = new Prescription();
+			p.setMedicine(m1[0]); p.setDoctorname(doctorname);
+			  p.setMedicinequantity(m2[0]); p.setPatientage(patientage);
+			  p.setPatientgender(patientgender); p.setPatientname(patientname);
+			  p.setMedicine1(m1[1]); p.setMedicine2(m1[2]);
+			  p.setMedicine3(m1[3]); p.setMedicine4(m1[4]);
+			  p.setMedicinequantity1(m2[1]);
+			  p.setMedicinequantity2(m2[2]);
+			  p.setMedicinequantity3(m2[3]);
+			  p.setMedicinequantity4(m2[4]); pre.addprescription(p);
+			
+			return new ModelAndView("doctorhome");
+			
+		}
 		@RequestMapping(value="/room")
 		public ModelAndView rooms(@RequestParam(value="patientname")String patientname,@RequestParam(value="floornumber")String floornumber,@RequestParam(value="roomnumber")String roomnumber,@RequestParam(value="availability")String availability)
 		{
@@ -423,7 +461,7 @@ public class AppController implements AppCtrl {
 		@RequestMapping(value="/adminlogout")
 		public String adminLogout(HttpSession ses) {
 			ses.invalidate();
-			return "redirect:http://localhost:8989/HMS/adminlogin.jsp";
+			return  "redirect:http://localhost:8989/HMS/adminlogin.jsp";
 		}
 		@RequestMapping(value="/doctorwork")
 		public  ModelAndView doctorwork(HttpSession ses,HttpServletRequest request) {

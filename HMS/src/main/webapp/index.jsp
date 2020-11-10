@@ -6,6 +6,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 <style>
 body {
@@ -374,18 +375,18 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 <body>
 <div class="navbar">
 <!--   <a href="addadmin.jsp" >Add</a> -->
-  <a href="patientlogin.jsp"  class="right">Book Appointment</a>
+  <a href="patientlogin.jsp"  class="right">Book Appointment <i class='far fa-calendar'></i></i></a>
   <div class="dropdown">
     <button class="dropbtn">Login
-      <i class="fa fa-caret-down"></i>
+      <i class="fa fa-fw fa-user"></i>
     </button>
     <div class="dropdown-content">
-<a href="adminlogin.jsp" >Login as Admin</a>
+<a href="adminlogin.jsp" > <i class="fa fa-fw fa-user"></i>Login as Admin</a>
 
 
-<a href="doctorlogin.jsp">Login as Doctor</a>
-<a href="pharmacistlogin.jsp">Login as Pharmacist</a>
-<a href="receptionistlogin.jsp">Login as Receptionist</a>
+<a href="doctorlogin.jsp"><i class="fa fa-fw fa-user"></i>Login as Doctor</a>
+<a href="pharmacistlogin.jsp"><i class="fa fa-fw fa-user"></i>Login as Pharmacist</a>
+<a href="receptionistlogin.jsp"><i class="fa fa-fw fa-user"></i>Login as Receptionist</a>
  </div>
  </div> 
 </div>
@@ -430,7 +431,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     </div>
     <div class="flip-card-back">
      
-      <H1>Refurbished Ventilator</H1> 
+      <H1>Positive-Pressure Ventilator</H1> 
       
     </div>
   </div>
@@ -465,33 +466,33 @@ Modular Operation Theatre Systems </h1>
 </html>
 <div id="footer">
   <div>
-  <h2>For Hospital   <i class="fas fa-address-card" ></i></h2>
+  <h1>For Hospital   <i class="fas fa-address-card" ></i></h1>
 <!--   //<img src="" alt="hospital" style="width:20%;"> -->
-    <h1><i class="fa fa-map-marker" style="font-size:18px;color:white">  Chennai,Tamilnadu,India</i></h1>
+    <h1><i class="fa fa-map-marker" style="font-size:18px;color:white">  Chennai, Tamilnadu, India</i></h1>
     <h1><i class="fa fa-phone" style="font-size:18px;color:white">       +91 9876543210</i><br></h1>
     <h1><i class="fa fa-envelope" style="font-size:18px;color:white">    info@peoplecare.in</i><br></h1>
    <h1> <a href="about.jsp"  style="color:Turquoise"><i class="fa fa-bookmark" style="font-size:18px;color:white">  About Us</i><br></a></h1>
     <h1><a href="#" style="color:Turquoise"> <i class="fa fa-user-md" style="font-size:18px;color:white"> Find Doctors</i><br></a></h1>
   </div><div>
-    <h2>For Users  <i class="fa fa-user" ></i></h2>
+    <h1>For Users  <i class="fa fa-user" ></i></h1>
     <STYLE>A {text-decoration: none;} </STYLE>
-     <h1></h1><a href="patientlogin.jsp"  style="color:white"> <i class="fa fa-caret-right"></i>SignIn</a><br>
-     <h1></h1><a href="patientlogin.jsp" style="color:white"> <i class="fa fa-caret-right"></i>SignUp</a><br>
-     <h1></h1><a href="patientlogin.jsp" style="color:white"> <i class="fa fa-caret-right"></i>FAQ</a><br>
+     <h1></h1><a href="patientlogin.jsp"  style="color:white"> <i class="fa fa-caret-right"></i>Sign in</a><br>
+     <h1></h1><a href="patientlogin.jsp" style="color:white"> <i class="fa fa-caret-right"></i>Sign up</a><br>
+    
       <h1></h1><a href="patientlogin.jsp" style="color:white"> <i class="fa fa-caret-right"></i>Find Doctors</a><br>
       <h1></h1><a href="patientlogin.jsp" style="color:white"> <i class="fa fa-caret-right"></i>Find Pharmacy</a><br>
        
       <br>
     
   </div><div>
-    <h2>For Doctors  <i class="fa fa-user-md"></i></h2>
-     <h1></h1><a href="doctorlogin.jsp"  style="color:white"> <i class="fa fa-caret-right"></i>SignIn</a><br>
+    <h1>For Doctors                  <i class="fa fa-user-md"></i></h1>
+     <h1></h1><a href="doctorlogin.jsp"  style="color:white"> <i class="fa fa-caret-right"></i>Sign in</a><br>
 <!--       <h1></h1><a href="doctorlogin.jsp" style="color:white"> <i class="fa fa-caret-right"></i>SignUp</a><br> -->
-      <h1></h1><a href="doctorlogin.jsp" style="color:white"> <i class="fa fa-caret-right"></i>FAQ</a>
+     
       <br>
       
       <h2>Follow Us On</h2>
-      <i class="fa fa-facebook-official" style="font-size:48px;color:Royalblue"></i> @Peoplecare
+      <i class="fa fa-facebook-official"></i> @Peoplecare
   </div>
    </div>
 

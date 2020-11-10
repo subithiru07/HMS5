@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
 <style>
 body {font-family: "Times New Roman", Times, serif;}
@@ -111,7 +113,7 @@ img {
 <div class="navbar">
 
 
-<a href="http://localhost:8989/HMS/index.jsp">Home</a>
+<a href="http://localhost:8989/HMS/index.jsp">Home  <i class="fa fa-home"></i></a>
 
 </div>
 <center>
@@ -123,7 +125,7 @@ img {
 
 <form action="receptionist/login.html" method="post">
 <label for="uname"><b>Username</b></label><input type="text" name="name" placeholder="Enter Username" required><br>
-<label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter password"  required><br>
+<label for="psw"><b>Password</b></label><input type="password" name="password" placeholder="Enter Password"  required><br>
 <input type="submit" value="login">
 
 </form>

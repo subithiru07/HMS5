@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 
-
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -137,11 +141,12 @@ img {
   
 </style>
 <div class="navbar">
-<a href="http://localhost:8989/HMS/index.jsp" >Home</a>
+<center><h1><font color="white">Pharmacist Home <i class="fa fa-home"></i></font></h1></center>
+<a href="http://localhost:8989/HMS/index.jsp" ><i class="fa fa-home"> Home </i></a>
 
-<a href="http://localhost:8989/HMS/addstock.jsp">New stocks</a>
-<a href="http://localhost:8989/HMS/medicalstocklist/list.html">Stocks List</a>
-<a href="http://localhost:8989/HMS/pharmacistlogin.jsp" class="right">Logout</a>
+<a href="http://localhost:8989/HMS/addstock.jsp"><i class='fas fa-laptop-medical'> New stocks </i></a>
+<a href="http://localhost:8989/HMS/medicalstocklist/list.html"><i class='fas fa-first-aid'> Stocks List </i></a>
+<a href="http://localhost:8989/HMS/pharmacistlogin.jsp"class="glyphicon glyphicon-log-out">Logout</a>
 </div>
 <div class="header">
 <img src="https://cdn.logojoy.com/wp-content/uploads/2018/05/30162353/1159-768x591.png" alt="Paris" style="width:50%;">
